@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>kassenQR</title>
+    <meta charset="utf-8">
+    <style>
+	h1 { color: #000;,font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+	h3 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+	p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
+	blockquote { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
+	pre { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+	
+	.plus-button {
+	border: 2px solid #007bfe;
+	background-color: #007bfe;
+	font-size: 16px;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 999px;
+	position: relative;
+	color: #fff;
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		background-color: #111;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	&:before {
+		height: 1em;
+		width: 0.2em;
+	}
+
+	&:after {
+		height: 0.2em;
+		width: 1em;
+	}
+}
+
+.plus-button--small {
+	font-size: 12px;
+}
+
+.plus-button--large {
+	font-size: 22px;
+}
+
+	body {
+		margin: 3px;
+		background-color: #fff;
+	}
+	.wrapper {
+		display: grid;
+    		grid-gap: 10px;
+		grid-template-columns: 50% 50%;
+		background-color: #fff;
+		color: #444;
+		
+		padding: 14px;
+	
+		 
+	}
+		.wrapper_2 {
+		display: grid;
+    		grid-gap: 10px;
+		grid-template-columns: 100%;
+		background-color: #fff;
+		color: #444;
+		padding: 14px;
+	
+		 
+	}
+
+	.box {
+		background-color: #5895a9;
+		color: #fff;
+		border-radius: 15px;
+		padding: 40px;
+		font-size: 150%;
+	}
+	.search {
+		background-color: #eeeeef;
+		color: #a1a1a5;
+		border-radius: 15px;
+		padding: 20px;
+		font-size: 150%;
+	}
+
+
+
+   </style>
+</head>
+
+ <body>
+	<div class="wrapper_2">
+	<h1>kassenQR</h1>
+	<div class="search"> Suchen</div></div>
+	 <div class="wrapper">
+		
+		<div class="box">Rewe<p>99,40$</p></div>
+		<div class="box">Saturn<p>99,40$</p></div>
+		<div class="box">Aldi<p>99,40$</p></div>
+		<div class="box">BMW<p>99,40$</p></div>
+		<div class="box">Fritten Werk<p>99,40$</p></div>
+		<div class="box">REWE<p>99,40$</p></div>
+		<div class="box">Saturn<p>99,40$</p></div>
+		
+	</div>
+<p></p>
+<center><button class="plus-button plus-button--large">+</button></center>
+
+
+</body>
+</html>

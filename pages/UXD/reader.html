@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test QR</title>
+	  <script src="https://cozmo.github.io/jsQR/jsQR.js"></script>
+    <meta charset="utf-8">
+    <style>
+	h1 { color: #000; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 84pt; font-style: normal; font-variant: normal; font-weight: bold; margin: 6pt; } 
+	
+	a { text-decoration: none;
+  color: #007bfe; font-family: "Helvetica Neue", vertical-align: middle;, Helvetica, Arial, sans-serif; font-size: 38pt; font-style: normal; font-variant: normal; font-weight: 700;, line-height: 17pt;
+}
+	.plus-button {
+	border: 2px solid #007bfe;
+	background-color: #007bfe;
+	height: 45px;
+	width:  45px;
+	border-radius: 999px;
+	position: relative;
+	color: #fff;
+  justify-self: center;
+  align-self: center;
+	
+}
+.plus-button--small {
+	font-size: 42px;
+}
+	body {
+		margin: 16pt;
+		background-color: #fff;
+	}
+	.wrapper {
+		display: grid;
+    		grid-gap: 10px;
+		grid-template-columns: 100%;
+		background-color: #fff;
+		color: #444;
+		
+		padding: 24px; //
+	
+		 
+	}
+		.wrapper_search {
+		display: grid;
+    		grid-gap: 10px;
+		grid-template-columns: 100%;
+		background-color: #fff;
+		color: #444;
+		padding: 24px;
+	
+		 
+	}
+		.wrapper_header {
+		display: grid;
+    		grid-gap: 10px;
+		grid-template-columns: 90% 38pt;
+		background-color: #fff;
+		color: #444;
+		padding: 24px;
+		margin: 0px;
+		 
+	}
+	.box {
+		background-color: #5895a9;
+		color: #fff;
+		border-radius: 25px;
+		padding: 52px;
+		font-size: 28pt;
+	}
+	.search {
+		background-color: #eeeeef;
+		color: #a1a1a5;
+		border-radius: 25px;
+		padding: 22px;
+		font-size: 28pt;
+	}
+	object {
+  		width: 100%;
+	}					
+ </style>
+</head>
+
+ <body>
+	<div class="wrapper_header">
+		<a href="#">Zurück</a>
+		
+	</div>
+	<div class="wrapper_search">
+		<h1>REWE</h1>
+		<div class="search"> Suchen</div>
+	</div>
+	<div class="wrapper">	
+		<div class="box">
+  <p>Testing jsQR by Cosmo Wolfe</p>
+	<p>The following program
+excerpt of Cosmo Wolfe from 'jsQR Demo' - https://github.com/cozmo/jsQR/blob/master/docs/index.html - - Apache License 2.0:</p>
+  <!--  The following program
+excerpt of Cosmo Wolfe from 'jsQR Demo' - https://github.com/cozmo/jsQR/blob/master/docs/index.html - - Apache License 2.0: //-->
+  <script>
+    var video = document.createElement("video");
+    var canvasElement = document.getElementById("canvas");
+    var canvas = canvasElement.getContext("2d");
+    var loadingMessage = document.getElementById("loadingMessage");
+    var outputContainer = document.getElementById("output");
+    var outputMessage = document.getElementById("outputMessage");
+    var outputData = document.getElementById("outputData");
+    function drawLine(begin, end, color) {
+      canvas.beginPath();
+      canvas.moveTo(begin.x, begin.y);
+      canvas.lineTo(end.x, end.y);
+      canvas.lineWidth = 4;
+      canvas.strokeStyle = color;
+      canvas.stroke();
+    }
+    // Use facingMode: environment to attemt to get the front camera on phones
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
+      video.srcObject = stream;
+      video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+      video.play();
+      requestAnimationFrame(tick);
+    });
+    function tick() {
+      loadingMessage.innerText = "⌛ Loading video..."
+      if (video.readyState === video.HAVE_ENOUGH_DATA) {
+        loadingMessage.hidden = true;
+        canvasElement.hidden = false;
+        outputContainer.hidden = false;
+        canvasElement.height = video.videoHeight;
+        canvasElement.width = video.videoWidth;
+        canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+        var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+        var code = jsQR(imageData.data, imageData.width, imageData.height, {
+          inversionAttempts: "dontInvert",
+        });
+        if (code) {
+          drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
+          drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
+          drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
+          drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
+          outputMessage.hidden = true;
+          outputData.parentElement.hidden = false;
+          outputData.innerText = code.data;
+        } else {
+          outputMessage.hidden = false;
+          outputData.parentElement.hidden = true;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+  </script>
+
+
+</div>
+
+
+	</div>
+<p></p>
+
+</body>
+</html>

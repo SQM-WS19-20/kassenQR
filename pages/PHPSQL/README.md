@@ -26,10 +26,11 @@ display rows for:
 
 https://sqm-ws19-20.github.io/kassenQR/pages/UXD/
 
-
+<code>
 SELECT Shop.Name, product.price, kassenbon.id FROM Kassenbon, Shop [...]
 WHERE product.ID = kassenbon.productID   [...]
     while([...] ) {
         echo "<a href="#"><div class="box">" + shop.NAME + <p> + SUM(product.PRICE) + </p></div></a>
     }
  
+</code>

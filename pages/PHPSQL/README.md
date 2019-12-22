@@ -29,21 +29,24 @@ Resulting String: %43§4?5§1?1
 https://sqm-ws19-20.github.io/kassenQR/pages/UXD/
 
 ```
-SELECT Shop.Name, product.price, kassenbon.id FROM Kassenbon, Shop [...]
+SELECT Shop.Name, product.price, kassenbon.id FROM Kassenbon, Shop, Produkt [...]
 WHERE product.ID = kassenbon.productID   [...]
-    while([...] ) {
-        echo "<a [...] ><div class="box">" + shop.NAME + <p> + SUM(product.PRICE) + </p></div></a>
+    for( kassenbon.id 1:N ) {
+        echo "<a [GOTO: EXAMPLE] ><div class="box">" + shop.NAME + <p> + SUM(product.PRICE) + </p></div></a>
     }
 ```
 
 #### display rows for: 
 
-https://sqm-ws19-20.github.io/kassenQR/pages/UXD/
+https://sqm-ws19-20.github.io/kassenQR/pages/UXD/example.html
 
 ```
-SELECT Shop.Name, product.price, kassenbon.id FROM Kassenbon, Shop [...]
-WHERE product.ID = kassenbon.productID   [...]
-    while([...] ) {
-        echo "<a [...] ><div class="box">" + shop.NAME + <p> + SUM(product.PRICE) + </p></div></a>
-    }
+FUNCTION(EXAMPLE){
+    SELECT kassenbon.id FROM Kassenbon, Produkt [...]
+        WHERE [...]
+            for( item.id 1:N ) {
+                echo "<a [...] ><div class="box">" + produkt.NAME + <p> + product.PRICE + </p></div></a>
+            }
+        }
+}
 ```

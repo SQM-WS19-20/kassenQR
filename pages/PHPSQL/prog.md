@@ -1,8 +1,8 @@
 ### Defintion
-% shopID
-§ productID
-? Quantity
-$ priceID
+* % shopID
+* § productID
+* ? Quantity
+* $ priceID
 
 ### Example:
 

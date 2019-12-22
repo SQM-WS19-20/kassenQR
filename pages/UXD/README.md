@@ -22,7 +22,7 @@
 
 
 
-### SQL Request
+### SQL Request [Pseudocode]
 
 
 #### display rows for: 

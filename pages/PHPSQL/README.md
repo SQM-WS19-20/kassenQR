@@ -13,10 +13,11 @@
 * productID(Tomato Soup) = 1; && Quantity = 1;
 
 
-Resulting String: %43§4?5§1?1
+### Resulting String: 
+%43§4?5§1?1
 
 
-### QR
+### Resulting QR-Code
 <img src="https://raw.githubusercontent.com/SQM-WS19-20/kassenQR/master/pages/PHPSQL/rec/IMG/qrcode.png" height="100">
 
 

@@ -1,14 +1,20 @@
 
 h1 { 
 	color: #000; 
-	font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family: SF Pro Text,
+		     SF Pro Icons,
+		     AOS Icons,
+	             Helvetica Neue,
+		     Helvetica,
+		     Arial,
+		     sans-serif;
 	font-size: 84pt; 
 	font-style: normal; 
 	font-variant: normal; 
 	font-weight: bold; 
 	margin: 6pt; } 
 	
-	a {	text-decoration: none;
+a {	text-decoration: none;
   		color: #007bfe; 
 		font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-se;
 		font-size: 38pt; 

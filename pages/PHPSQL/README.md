@@ -1,3 +1,5 @@
+# Function Set
+
 ### Defintion
 * % shopID
 * § productID
@@ -22,7 +24,19 @@ Resulting String: %43§4?5§1?1
 ### SQL Request
 
 
-display rows for: 
+#### display rows for: 
+
+https://sqm-ws19-20.github.io/kassenQR/pages/UXD/
+
+```
+SELECT Shop.Name, product.price, kassenbon.id FROM Kassenbon, Shop [...]
+WHERE product.ID = kassenbon.productID   [...]
+    while([...] ) {
+        echo "<a [...] ><div class="box">" + shop.NAME + <p> + SUM(product.PRICE) + </p></div></a>
+    }
+```
+
+#### display rows for: 
 
 https://sqm-ws19-20.github.io/kassenQR/pages/UXD/
 

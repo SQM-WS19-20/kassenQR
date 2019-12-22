@@ -1,5 +1,7 @@
 # Function Set
 
+## Input
+
 ### Defintion
 * % shopID
 * § productID
@@ -22,7 +24,7 @@
 
 
 
-### SQL Request [Pseudocode]
+## SQL Request [Pseudocode]
 
 
 #### display rows for: 

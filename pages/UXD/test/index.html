@@ -1,4 +1,3 @@
-
 <html>
 <head>
   <meta charset="utf-8">
@@ -9,58 +8,47 @@
     body {
       font-family: 'Ropa Sans', sans-serif;
       color: #333;
-      max-width: 100%;
+      max-width: 87%;
       margin: 0 auto;
       position: relative;
-    }
-
-    #githubLink {
-      position: absolute;
-      right: 0;
-      top: 12px;
-      color: #2D99FF;
     }
 
     h1 {
       margin: 10px 0;
       font-size: 40px;
     }
-
     #loadingMessage {
       text-align: center;
       padding: 40px;
       background-color: #eee;
     }
-
     #canvas {
       width: 100%;
     }
-
     #output {
-      margin-top: 20px;
-      background: #eee;
+      margin-top: 79px;
+      background: #222;
       padding: 10px;
       padding-bottom: 0;
+      color: #fff;
     }
-
     #output div {
       padding-bottom: 10px;
       word-wrap: break-word;
     }
-
     #noQRFound {
       text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>jsQR Demo</h1>
-  <a id="githubLink" href="https://github.com/cozmo/jsQR">View documentation on Github</a>
-  <p>Pure JavaScript QR code decoding library.</p>
-  <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+  <h1>krassenQR</h1>
+  <a id="githubLink" href="/">Zurück</a>
+  <p>Den angezeigten QR-Code einlesen</p>
+  <div id="loadingMessage">Zum Einlesen des QR-Codes auf dem Kassenzettels muss...</div>
   <canvas id="canvas" hidden></canvas>
   <div id="output" hidden>
-    <div id="outputMessage">No QR code detected.</div>
+    <div id="outputMessage">Kein QR-Code erkannt.</div>
     <div hidden><b>Data:</b> <span id="outputData"></span></div>
   </div>
   <script>
@@ -71,7 +59,6 @@
     var outputContainer = document.getElementById("output");
     var outputMessage = document.getElementById("outputMessage");
     var outputData = document.getElementById("outputData");
-
     function drawLine(begin, end, color) {
       canvas.beginPath();
       canvas.moveTo(begin.x, begin.y);
@@ -80,7 +67,6 @@
       canvas.strokeStyle = color;
       canvas.stroke();
     }
-
     // Use facingMode: environment to attemt to get the front camera on phones
     navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
       video.srcObject = stream;
@@ -88,14 +74,12 @@
       video.play();
       requestAnimationFrame(tick);
     });
-
     function tick() {
       loadingMessage.innerText = "⌛ Loading video..."
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
         loadingMessage.hidden = true;
         canvasElement.hidden = false;
         outputContainer.hidden = false;
-
         canvasElement.height = video.videoHeight;
         canvasElement.width = video.videoWidth;
         canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);

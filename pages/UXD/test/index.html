@@ -8,7 +8,7 @@
     body {
       font-family: 'Ropa Sans', sans-serif;
       color: #333;
-      max-width: 87%;
+      max-width: 100%;
       margin: 0 auto;
       position: relative;
     }
@@ -42,15 +42,23 @@
   </style>
 </head>
 <body>
-  <h1>krassenQR</h1>
-  <a id="githubLink" href="/">Zurück</a>
-  <p>Den angezeigten QR-Code einlesen</p>
+
+
+  <h1>Bitte QR-Code einlesen</h1>
+
+
   <div id="loadingMessage">Zum Einlesen des QR-Codes auf dem Kassenzettels muss...</div>
   <canvas id="canvas" hidden></canvas>
   <div id="output" hidden>
     <div id="outputMessage">Kein QR-Code erkannt.</div>
-    <div hidden><b>Data:</b> <span id="outputData"></span></div>
+
+
+    <div hidden><b>Data: This</b> <span id="outputData"></span></div>
+
+
   </div>
+
+
   <script>
     var video = document.createElement("video");
     var canvasElement = document.getElementById("canvas");
@@ -88,10 +96,10 @@
           inversionAttempts: "dontInvert",
         });
         if (code) {
-          drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
-          drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
-          drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
-          drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
+          drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#222");
+          drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#333");
+          drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#444");
+          drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#555");
           outputMessage.hidden = true;
           outputData.parentElement.hidden = false;
           outputData.innerText = code.data;

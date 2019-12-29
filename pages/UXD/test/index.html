@@ -53,7 +53,7 @@
     <div id="outputMessage">Kein QR-Code erkannt.</div>
 
 
-    <div hidden><b>Data: This</b> <span id="outputData"></span><span id="outputData"></span><span id="outputData"></span></div>
+    <div hidden><b>Data: Erfolg, du wirst weitergeleitet</b> <span id="outputData"></span></span></div>
 
 
   </div>
@@ -103,7 +103,7 @@
           outputMessage.hidden = true;
           outputData.parentElement.hidden = false;
           outputData.innerText = code.data + "  test this";
-          window.location.replace("http://stackoverflow.com");
+          window.location.replace(outputData.innerText);
         } else {
           outputMessage.hidden = false;
           outputData.parentElement.hidden = true;

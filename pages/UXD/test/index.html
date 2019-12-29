@@ -96,13 +96,13 @@
           inversionAttempts: "dontInvert",
         });
         if (code) {
-          drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#222");
+        /*  drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#222");
           drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#333");
           drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#444");
-          drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#555");
+          drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#555"); */
           outputMessage.hidden = true;
           outputData.parentElement.hidden = false;
-          outputData.innerText = code.data;
+          outputData.innerText = code.data + "  test this";
         } else {
           outputMessage.hidden = false;
           outputData.parentElement.hidden = true;
